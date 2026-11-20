@@ -1,0 +1,1 @@
+../../skills/worklog-init/assets/worklog-rule.md

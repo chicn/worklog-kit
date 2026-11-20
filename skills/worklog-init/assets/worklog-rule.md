@@ -1,4 +1,4 @@
-## Worklog
+# Worklog
 
 依頼された作業が一区切りつくたびに、コミットやセッション終了を待たず `docs/worklog/YYYY-MM-DD-HH-mm_<slug>.md` に記録する。コードを変更しない調査や検討も記録する。
 

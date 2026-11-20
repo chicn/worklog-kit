@@ -61,7 +61,7 @@ def check_commit(data):
         return
     reason = (
         f"今日（{today}）の日付のワークログが {WORKLOG_DIR}/ にありません。"
-        "CLAUDE.md の Worklog 節に従ってこの作業のワークログを書き、同じコミットに含めてから、もう一度コミットしてください。"
+        ".claude/rules/worklog.md の規則に従ってこの作業のワークログを書き、同じコミットに含めてから、もう一度コミットしてください。"
     )
     print(json.dumps({
         "hookSpecificOutput": {
@@ -126,7 +126,7 @@ def check_stop(data):
     state_file.write_text(json.dumps({"asked_at": total}))
     reason = (
         "ワークログの確認です。前回ワークログを書いてから作業が続いています。"
-        f"依頼された作業（コードを変更しない調査や検討も含む）が一区切りついていれば、CLAUDE.md の Worklog 節に従って {WORKLOG_DIR}/ に記録してください。"
+        f"依頼された作業（コードを変更しない調査や検討も含む）が一区切りついていれば、.claude/rules/worklog.md の規則に従って {WORKLOG_DIR}/ に記録してください。"
         "まだ途中の場合と、記録するほどの作業をしていない場合は、何も書かずにそのまま応答を終えてください。この確認についてユーザーに説明する必要はありません。"
     )
     print(json.dumps({"decision": "block", "reason": reason}, ensure_ascii=False))
